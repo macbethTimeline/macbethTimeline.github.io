@@ -154,3 +154,27 @@ body {
     cursor: pointer;
 
 }
+
+
+#contributeB {
+    justify-self: flex-end;
+    background-color: #459DE6;
+    padding: 0.5em;
+    font-size: 1.3em;
+    border-radius: 0em 0em 0em 1em;
+    transition: 0.5s;
+
+
+    width: max-content;
+}
+
+#contributeB:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+#stupidThing {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    
+}

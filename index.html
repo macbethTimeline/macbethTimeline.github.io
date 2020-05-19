@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macbeth Timeline</title>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -18,10 +16,16 @@
     <div id="app">
         <div id="container"
             :style="{'backgroundImage': 'linear-gradient(rgba(69,157,230,0.5), rgba(0,0,0,0.8)), url(' + timeline[indexV].img + ')'}">
-
+           
+           
+           <div id="stupidThing"> <div id="contributeB" onclick="location.href='contribute.html'">Contribute</div></div>
 
             <h1 class="title">Macbeth Timeline</h1>
-            <div style="text-align: center;"><p>Made by Moses and Keyser</p></div>
+
+
+            <div style="text-align: center;">
+                <p>Made by Moses and Keyser</p>
+            </div>
 
 
 
@@ -40,7 +44,7 @@
                 <p style="margin-top:0.5em">{{timeline[indexV].desc}}</p>
             </section>
             <div>
-                <h1 style = "text-align: center; margin-top: 1em;">Themes</h1>
+                <h1 style="text-align: center; margin-top: 1em;">Themes</h1>
                 <div class="themes" v-for="theme in timeline[indexV].themes">
                     <div class="theme">{{theme}}</div>
 
