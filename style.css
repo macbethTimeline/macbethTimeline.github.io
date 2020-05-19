@@ -72,7 +72,7 @@ body {
 
 }
 .location h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: white;
     margin: 0.1em;
     text-decoration: underline;
@@ -102,6 +102,11 @@ body {
 
 .quote {
     color: black;
+}
+
+.quotes h3 {
+    font-size: 1em;
+    
 }
 .quotes h4 {
     margin-top: 1em;
