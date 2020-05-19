@@ -13,6 +13,6 @@ function openMail() {
 
 
     }
-    window.open('mailto:moses.joshua@emanuelschool.nsw.edu.au;keyser.jesse@emanuelschool.nsw.edu.au?subject=subject&body=' + JSON.stringify(stuff));
+    window.open('mailto:moses.joshua@emanuelschool.nsw.edu.au;keyser.jesse@emanuelschool.nsw.edu.au?subject=Macbeth_Quote&body=' + JSON.stringify(stuff));
 
 }
