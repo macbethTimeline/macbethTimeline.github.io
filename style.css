@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.title {
+    text-align: center;
+    padding: 0.1em;
+    font-size: 3em;
+    color: black;
+}
+
+.slider {
+    margin-top: 1em;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100vw; 
+    height: 6vh;
+    background: #c7c9cb    ; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.9; /* Set transparency (for mouse-over effects on hover) */
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 6em; /* Set a specific slider handle width */
+    height: 6em; /* Slider handle height */
+    border-radius: 1em;
+
+    /* border: solid green 3px; */
+    background: #459DE6  ; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    transition: 0.5s;
+}
+  
+.slider::-webkit-slider-thumb:hover {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 7em;
+    height: 7em;
+    background: #459DE6; 
+    cursor: pointer;
+}
+
+
+.location {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    flex-direction: column;
+    
+
+
+}
+.location h2 {
+    font-size: 2.5em;
+    color: white;
+    margin: 0.1em;
+    text-decoration: underline;
+    text-decoration-color: #459DE6;
+}
+
+
+.quotes {
+    background-color: #c7c9cb;
+    width: 30vw;
+    display: flex;
+    align-content : center;
+    flex-direction: column;
+    border-radius: 1em;
+    padding: 1em;
+    
+
+    
+}
+
+.quote {
+    width: 30vw;
+    line-height: 1.5;
+    text-align: center;
+
+}
+
+.quote {
+    color: black;
+}
+.quotes h4 {
+    margin-top: 1em;
+    
+}
+
+
+.unders {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.imgThing {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 8em;
+    box-shadow: 0 0 5px black;
+}
+
+.themes {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.theme {
+    background-color: rgba(212, 212, 212, 0.3);
+    color: black;
+    font-weight: 800;
+    padding: 0.5em;
+    border-radius: 0.6em;
+    transition: 0.3s;
+    margin: 0.5em;
+
+}
+
+
+.theme:hover {
+    background-color: rgba(212, 212, 212, 0.6);
+    box-shadow: 0 0 10px white;
+    color: black;
+    font-weight: 800;
+    padding: 0.5em;
+    border-radius: 0.6em;
+    cursor: pointer;
+
+}
