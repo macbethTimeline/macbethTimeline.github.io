@@ -1,22 +1,62 @@
 
+<!DOCTYPE html>
+<html lang="en">
 
-let app = new Vue({
-    el: '#app',
-    data: {
-        indexV: 0,
-        timeline: {}
-    },
-    computed: {
-        lengthBar: function() {
-            return this.timeline.length-1
-        }
-    },
-    created() {
-        fetch("https://github.com/macbethTimeline/macbethTimeline.github.io/blob/master/timeline.json").then((resp) => {
-            this.timeline = resp.json;
-        }, (error) => {
-            console.log(error)
-        }) 
-    }
-})
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macbeth Timeline</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+    <div id="app">
+        <div id="container"
+            :style="{'backgroundImage': 'linear-gradient(rgba(69,157,230,0.5), rgba(0,0,0,0.8)), url(' + timeline[indexV].img + ')'}">
+
+
+            <h1 class="title">Macbeth Timeline</h1>
+            <div style="text-align: center;"><p>Made by Moses and Keyser</p></div>
+
+
+
+            <div class="location">
+                <!-- <img class="imgThing" :src="timeline[indexV].img"> -->
+                <h2>Scene: {{timeline[indexV].scene}}</h2>
+                <h2>Act: {{timeline[indexV].act}}</h2>
+            </div>
+            <input class="slider" type="range" min="0" :max="lengthBar" v-model:value="indexV">
+            <section class="unders">
+                <h2 style="margin-bottom:0.5em">{{timeline[indexV].title}}</h2>
+                <div class="quotes">
+                    <h3 class="quote">"{{timeline[indexV].quote}}"</h3>
+                    <h4 style="color:rgb(17,18,17) ">- {{timeline[indexV].by}}</h4>
+                </div>
+                <p style="margin-top:0.5em">{{timeline[indexV].desc}}</p>
+            </section>
+            <div>
+                <h1 style = "text-align: center; margin-top: 1em;">Themes</h1>
+                <div class="themes" v-for="theme in timeline[indexV].themes">
+                    <div class="theme">{{theme}}</div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+
+</html>
