@@ -4,7 +4,7 @@ let app = new Vue({
     el: '#app',
     data: {
         indexV: 0,
-        timeline: {}
+        timeline: []
     },
     computed: {
         lengthBar: function() {
