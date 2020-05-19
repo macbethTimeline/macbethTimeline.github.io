@@ -30,7 +30,7 @@
                 <h2>Scene: {{timeline[indexV].scene}}</h2>
                 <h2>Act: {{timeline[indexV].act}}</h2>
             </div>
-            <input class="slider" type="range" min="0" max="9" v-model:value="indexV">
+            <input class="slider" type="range" min="0" :max="lengthBar" v-model:value="indexV">
             <section class="unders">
                 <h2 style="margin-bottom:0.5em">{{timeline[indexV].title}}</h2>
                 <div class="quotes">

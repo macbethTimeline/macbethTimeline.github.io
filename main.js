@@ -129,6 +129,11 @@ let app = new Vue({
                 "img": "img/photoTen.png"
             }
         ]
+    },
+    computed: {
+        lengthBar: function() {
+            return this.timeline.length-1
+        }
     }
 })
 
