@@ -13,6 +13,18 @@ function openMail() {
 
 
     }
+
+    fetch('https://macbeth-api.herokuapp.com/', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: "",
+            params: stuff
+        }).then(res => res.json())
+        .then(res => console.log(res));
+
     window.open('mailto:moses.joshua@emanuelschool.nsw.edu.au;keyser.jesse@emanuelschool.nsw.edu.au?subject=Macbeth_Quote&body=' + JSON.stringify(stuff));
 
 }
