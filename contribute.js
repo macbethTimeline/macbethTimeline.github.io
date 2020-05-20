@@ -19,7 +19,7 @@ function openMail() {
     for (i in stuff) {
         a.searchParams.append(i, stuff[i]);
     }
-    location.href = a;
+    location.href = a.toString();
 
 
 
