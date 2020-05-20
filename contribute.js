@@ -17,8 +17,9 @@ function openMail() {
    let xhr = new XMLHttpRequest();
    xhr.setRequestHeader = {"params": stuff, "Access-Control-Allow-Origin": null};
    xhr.open('POST', 'https://macbeth-api.herokuapp.com/', true);
+   xhr.withCredentials = true;
    xhr.onload = function () {
-    console.log("DOne")
+    console.log("PLEASE WORK")
   };
 
   xhr.send("null");
