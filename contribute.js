@@ -21,7 +21,9 @@ function openMail() {
             console.log("SUCCESS")
         },
 
-        data: stuff,
+        data: {
+            "epicCoolThing": stuff
+        },
       });
 
 //    let xhr = new XMLHttpRequest();
