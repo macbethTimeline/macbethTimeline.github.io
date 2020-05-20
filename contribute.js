@@ -7,7 +7,7 @@ function openMail() {
         "quote": document.getElementById("quote").value,
         "desc": document.getElementById("description").value,
         "by": document.getElementById("by").value,
-        "themes": JSON.stringify(document.getElementById("themes").value.split(",")),
+        "themes": document.getElementById("themes").value.split(","),
 
 
 
@@ -17,13 +17,12 @@ function openMail() {
     $.ajax({
         type: "POST",
         url: "https://macbeth-api.herokuapp.com/",
-        success: function(data) {
-            console.log("SUCCESS")
-        },
-
         data: {
-            "epicCoolThing": stuff
+            'thingpls': themes'
         },
+          success: function(data) {
+            return data;
+          }
       });
 
 //    let xhr = new XMLHttpRequest();
