@@ -21,16 +21,7 @@ function openMail() {
     }
     location.href = a;
 
-    $.ajax({
-        type: "POST",
-        url: "https://macbeth-api.herokuapp.com/",
-        data: {
-            'thingpls': themes
-        },
-          success: function(data) {
-            return data;
-          } 
-      });
+
 
 
 
