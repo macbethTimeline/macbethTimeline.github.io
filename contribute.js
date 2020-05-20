@@ -14,15 +14,26 @@ function openMail() {
 
     }
 
-   let xhr = new XMLHttpRequest();
-   xhr.setRequestHeader = {"params": stuff, "Access-Control-Allow-Origin": null};
-   xhr.open('POST', 'https://macbeth-api.herokuapp.com/', true);
-   xhr.withCredentials = true;
-   xhr.onload = function () {
-    console.log("PLEASE WORK")
-  };
+    $.ajax({
+        "type": "POST",
+        "url": "https://macbeth-api.herokuapp.com/",
+        "headers": {
+            "params": stuff,
+        },
+        "success": function(data) {
+            console.log("SUCCESS")
+        }
+      });
 
-  xhr.send("null");
+//    let xhr = new XMLHttpRequest();
+//    xhr.setRequestHeader = {"params": stuff, "Access-Control-Allow-Origin": null};
+//    xhr.open('POST', 'https://macbeth-api.herokuapp.com/', true);
+//    xhr.withCredentials = true;
+//    xhr.onload = function () {
+//     console.log("PLEASE WORK")
+//   };
+
+//   xhr.send("null");
 
 
 
