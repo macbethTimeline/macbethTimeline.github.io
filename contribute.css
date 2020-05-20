@@ -59,3 +59,60 @@ body {
 p {
     color: white;
 }
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.inputBox {
+    width:3em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.tools {
+    display: flex;
+    margin-right: 45px;
+}
+
+.text {
+    margin-left: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.titleBox {
+    text-align: center;
+    border-radius: 10px;
+    width: 30em;
+    height: 5em;
+}
+
+.quotebox {
+    text-align: center;
+    width: 80em; 
+    height: 10em;
+    border-radius: 20px;
+}
+
+.whoSaid {
+    text-align: center;
+    width:10em;
+    height: 3em;
+    border-radius: 20px;
+}
+
+.description {
+    text-align: center;
+    width: 30em;
+    height: 5em;
+    border-radius: 20px;
+}
+
+.themesInput {
+    text-align: center;
+    width: 20em;
+    height: 5em;
+    border-radius: 20px;
+}
