@@ -14,7 +14,7 @@ function openMail() {
 
     }
 
-    let a = new Url("https://macbeth-api.herokuapp.com/")
+    let a = new URL("https://macbeth-api.herokuapp.com/");
 
     for (i in stuff) {
         a.searchParams.append(i, stuff[i]);
