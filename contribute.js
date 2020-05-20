@@ -18,7 +18,7 @@ function openMail() {
         type: "POST",
         url: "https://macbeth-api.herokuapp.com/",
         data: {
-            'thingpls': themes'
+            'thingpls': themes
         },
           success: function(data) {
             return data;
