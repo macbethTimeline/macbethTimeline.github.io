@@ -20,7 +20,7 @@ function openMail() {
         "success": function(data) {
             console.log("SUCCESS")
         },
-        "stuff": stuff,
+        "body": stuff,
       });
 
 //    let xhr = new XMLHttpRequest();
