@@ -17,12 +17,10 @@ function openMail() {
     $.ajax({
         "type": "POST",
         "url": "https://macbeth-api.herokuapp.com/",
-        "headers": {
-            "params": stuff,
-        },
         "success": function(data) {
             console.log("SUCCESS")
-        }
+        },
+        "body": stuff,
       });
 
 //    let xhr = new XMLHttpRequest();
