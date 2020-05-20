@@ -14,6 +14,13 @@ function openMail() {
 
     }
 
+    let a = new Url("https://macbeth-api.herokuapp.com/")
+
+    for (i in stuff) {
+        a.searchParams.append(i, stuff[i]);
+    }
+    location.href = a;
+
     $.ajax({
         type: "POST",
         url: "https://macbeth-api.herokuapp.com/",
@@ -22,8 +29,10 @@ function openMail() {
         },
           success: function(data) {
             return data;
-          }
+          } 
       });
+
+
 
 //    let xhr = new XMLHttpRequest();
 //    xhr.setRequestHeader = {"params": stuff, "Access-Control-Allow-Origin": null};
