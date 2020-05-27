@@ -7,7 +7,7 @@ function openMail() {
         "quote": document.getElementById("quote").value,
         "desc": document.getElementById("description").value,
         "by": document.getElementById("by").value,
-        "themes": document.getElementById("themes"),
+        "themes": document.getElementById("themes").value,
 
 
 
