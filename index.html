@@ -8,66 +8,87 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167306602-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-167306602-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-167306602-1');
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
 
+
     <div id="app">
-        <div id="container"
-            :style="{'backgroundImage': 'linear-gradient(rgba(69,157,230,0.5), rgba(0,0,0,0.8)), url(' + timeline[indexV].img + ')'}">
-           
-           
-           <div id="stupidThing"> <div id="contributeB" onclick="location.href='contribute.html'">Contribute</div></div>
-
-            <h1 class="title">Macbeth Timeline</h1>
+        <div id="contain" v-if="!loading">
+            <div v-if="timeline[indexV].img" id="container"
+                :style="{'backgroundImage': 'linear-gradient(rgba(69,157,230,0.5), rgba(0,0,0,0.8)), url(' + timeline[indexV].img + ')'}">
 
 
-            <div style="text-align: center;">
-                <p>Made by Moses and Keyser</p>
-            </div>
-
-
-
-            <div class="location">
-                <!-- <img class="imgThing" :src="timeline[indexV].img"> -->
-                <h2>Scene: {{timeline[indexV].scene}}</h2>
-                <h2>Act: {{timeline[indexV].act}}</h2>
-            </div>
-            <input class="slider" type="range" min="0" :max="lengthBar" v-model:value="indexV">
-            <section class="unders">
-                <h2 style="margin-bottom:0.5em">{{timeline[indexV].title}}</h2>
-                <div class="quotes">
-                    <h3 class="quote">"{{timeline[indexV].quote}}"</h3>
-                    <h4 style="color:rgb(17,18,17) ">- {{timeline[indexV].by}}</h4>
+                <div id="stupidThing">
+                    <div id="contributeB" onclick="location.href='contribute.html'">Contribute</div>
                 </div>
-                <p style="margin-top:0.5em">{{timeline[indexV].desc}}</p>
-            </section>
-            <div>
-                <h1 style="text-align: center; margin-top: 1em;">Themes</h1>
-                <div class="themes" v-for="theme in timeline[indexV].themes">
-                    <div class="theme">{{theme}}</div>
 
+                <h1 class="title">Macbeth Timeline</h1>
+
+
+                <div style="text-align: center;">
+                    <p>Made by Moses and Keyser</p>
                 </div>
-            </div>
 
+
+
+                <div class="location">
+                    <!-- <img class="imgThing" :src="timeline[indexV].img"> -->
+                    <h2 v-if="timeline[indexV].scene">Scene: {{timeline[indexV].scene}}</h2>
+                    <h2 v-if="timeline[indexV].act">Act: {{timeline[indexV].act}}</h2>
+                </div>
+                <input class="slider" type="range" min="0" :max="lengthBar" v-model:value="indexV">
+                <section class="unders">
+                    <h2 style="margin-bottom:0.5em">{{timeline[indexV].title}}</h2>
+                    <div class="quotes">
+                        <h3 class="quote" v-if="timeline[indexV].quote">"{{timeline[indexV].quote}}"</h3>
+                        <h4 style="color:rgb(17,18,17) " v-if="timeline[indexV].by">- {{timeline[indexV].by}}</h4>
+                    </div>
+                    <p style="margin-top:0.5em" v-if="timeline[indexV].desc">{{timeline[indexV].desc}}</p>
+                </section>
+                <div>
+                    <h1 style="text-align: center; margin-top: 1em;">Themes</h1>
+                    <div v-if="timeline[indexV].themes" class="themes" v-for="theme in timeline[indexV].themes">
+                        <div class="theme">{{theme}}</div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
 
 
 
     </div>
-
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
     <script src="main.js"></script>
+
+
+
+
+
+
+
+
 </body>
 
 

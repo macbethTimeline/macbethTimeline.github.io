@@ -1,4 +1,24 @@
-function openMail() {
+let firebaseConfig = {
+    apiKey: "AIzaSyBtaD1WBX_tnOEFn1hCVlhyeLZstD_FK98",
+    authDomain: "macbethtimeline.firebaseapp.com",
+    databaseURL: "https://macbethtimeline.firebaseio.com",
+    projectId: "macbethtimeline",
+    storageBucket: "macbethtimeline.appspot.com",
+    messagingSenderId: "373358824090",
+    appId: "1:373358824090:web:ef7dcf6bd940877ebd6d23",
+    measurementId: "G-Z45VFET5SC"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+let db = firebase.firestore();
+
+
+
+
+
+function getValues() {
 
     let stuff = {
         "scene": parseInt(document.getElementById("scene").value),
@@ -7,34 +27,38 @@ function openMail() {
         "quote": document.getElementById("quote").value,
         "desc": document.getElementById("description").value,
         "by": document.getElementById("by").value,
-        "themes": document.getElementById("themes").value,
-
-
-
-
+        "themes": document.getElementById("themes").value.split(","),
     }
 
-    let a = new URL("https://macbeth-api.herokuapp.com/posts");
-
-    for (i in stuff) {
-        a.searchParams.append(i, stuff[i]);
-    }
-    location.href = a.toString();
+    return stuff;
+}
 
 
 
 
+function submitTo(e) {
+    e.preventDefault();
 
-//    let xhr = new XMLHttpRequest();
-//    xhr.setRequestHeader = {"params": stuff, "Access-Control-Allow-Origin": null};
-//    xhr.open('POST', 'https://macbeth-api.herokuapp.com/', true);
-//    xhr.withCredentials = true;
-//    xhr.onload = function () {
-//     console.log("PLEASE WORK")
-//   };
+    let things = getValues();
 
-//   xhr.send("null");
+    sendF(things);
 
+    
 
 
 }
+
+function sendF(stuff) {
+    db.collection("timeline").add(stuff).then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+    
+}
+
+
+
+
+document.getElementById("sendStuff").addEventListener("click", submitTo);

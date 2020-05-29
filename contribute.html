@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contribute.css">
     <title>Contribute</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="contribute.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 </head>
+
 <body>
     <section class="hero">
-        <div id="stupidThing"> <div id="contributeB" onclick="location.href='index.html'">Timeline</div></div>
+        <div id="stupidThing">
+            <div id="contributeB" onclick="location.href='index.html'">Timeline</div>
+        </div>
         <h1 class="title">Contribute</h1>
         <div style="text-align: center; ">
             <br>
             <p style="color: white;">Add your own quotes to the timeline</p>
-            <p style="color: white;">Send us quotes from Macbeth you think should be in the timeline, and we'll review + add them</p>
+            <p style="color: white;">Send us quotes from Macbeth you think should be in the timeline, and we'll review +
+                add them</p>
         </div>
 
         <br>
 
-    <div class="tools">
-        <p class="text">Scene:</p> <input class="inputBox" type="text" placeholder="1" id="scene">
-        
-        <p class="text">Act:</p> <input class="inputBox" type="text" placeholder="2" id="act">
+        <div class="tools">
+            <p class="text">Scene:</p> <input class="inputBox" type="text" placeholder="1" id="scene">
+
+            <p class="text">Act:</p> <input class="inputBox" type="text" placeholder="2" id="act">
         </div>
-        
+
         <br>
-        <p>Title:</p> <input class="titleBox" type="text" placeholder="Macbeth is introduced to the audience" id="title">
+        <p>Title:</p> <input class="titleBox" type="text" placeholder="Macbeth is introduced to the audience"
+            id="title">
         <br>
-        <p>Quote:</p> <input class="quotebox" type="text" placeholder="But brave Macbeth—well, he deserves that name— Disdaining fortune, with his brandished steel,Like valour’s minion carved out his passage Till he faced the slave;" id="quote">
+        <p>Quote:</p> <input class="quotebox" type="text"
+            placeholder="But brave Macbeth—well, he deserves that name— Disdaining fortune, with his brandished steel,Like valour’s minion carved out his passage Till he faced the slave;"
+            id="quote">
         <br>
         <p>Who said it:</p> <input class="whoSaid" type="text" placeholder="The Captain" id="by">
         <br>
-        <p>Description:</p> <input class="description" type="text" placeholder="Macbeth is introduced to the audience" id="description">
+        <p>Description:</p> <input class="description" type="text" placeholder="Macbeth is introduced to the audience"
+            id="description">
         <br>
-        <p>Themes:</p> <input class="themesInput" type="text" placeholder="Heroism, Nobility" id="themes" >
+        <p>Themes:</p> <input class="themesInput" type="text" placeholder="Heroism, Nobility" id="themes">
         <br>
-        <input type="button" value="Send" onclick="openMail()">
+
+        <input type="button" value="Send" id="sendStuff">
     </section>
-    
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <script src="contribute.js"></script>
+
+
 </body>
+
 </html>
