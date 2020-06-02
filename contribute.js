@@ -28,7 +28,7 @@ function getValues() {
         "desc": document.getElementById("description").value,
         "by": document.getElementById("by").value,
         "themes": document.getElementById("themes").value.split(","),
-        "page": document.getElementById("page").value
+        "page": parseInt(document.getElementById("page").value)
     }
 
     return stuff;
