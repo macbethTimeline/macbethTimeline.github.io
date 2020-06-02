@@ -46,7 +46,7 @@ let app = new Vue({
                     
                     
                 });
-                final.sort((a, b) => (a.scene > b.scene) ? 1 : (a.scene === b.scene) ? ((a.act > b.act) ? 1 : -1) : -1 )
+                final.sort((a, b) => (a.act > b.act) ? 1 : (a.act === b.act) ? ((a.scene > b.scene) ? 1 : -1) : -1 )
 
 
                 this.timeline = final;

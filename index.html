@@ -52,8 +52,10 @@
 
                 <div class="location">
                     <!-- <img class="imgThing" :src="timeline[indexV].img"> -->
-                    <h2 v-if="timeline[indexV].scene">Scene: {{timeline[indexV].scene}}</h2>
+
                     <h2 v-if="timeline[indexV].act">Act: {{timeline[indexV].act}}</h2>
+                    <h2 v-if="timeline[indexV].scene">Scene: {{timeline[indexV].scene}}</h2>
+                    
                 </div>
                 <input class="slider" type="range" min="0" :max="lengthBar" v-model:value="indexV">
                 <section class="unders">
