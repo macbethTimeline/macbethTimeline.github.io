@@ -10,7 +10,7 @@
 body {
     background-color: white;
     font-family: 'Montserrat', sans-serif;
-    background-image: linear-gradient(rgba(255,157,230,0.5), rgba(0,0,0,0.8)), url("img/photoOne.png");
+    background-image: linear-gradient(rgba(255,157,230,0.5), rgba(0,0,0,0.8)), url("img/test.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -115,4 +115,12 @@ p {
     width: 20em;
     height: 5em;
     border-radius: 20px;
+}
+
+
+#files {
+    text-align: center;
+    color: white;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }

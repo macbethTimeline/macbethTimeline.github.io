@@ -40,9 +40,14 @@ let app = new Vue({
                     // a.act = a.act.toString()
                     if (a["img"] == undefined) {
                         a["img"] = "img/test.jpg"
+                    } else {
+                        let storage = firebase.storage().ref(a["img"]);
+                        storage.getDownloadURL().then(function(url) {
+                            a["img"] = url;
+                        })
                     }
 
-                    final.push(a)
+                    final.push(a);
                     
                     
                 });

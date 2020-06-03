@@ -15,6 +15,11 @@ firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
 
 
+let files = [];
+document.getElementById("files").addEventListener("change", function (e) {
+    files = e.target.files;
+    console.log(files[0].name);
+});
 
 
 
@@ -31,6 +36,12 @@ function getValues() {
         "page": parseInt(document.getElementById("page").value)
     }
 
+    if (files) {
+        stuff["img"] = files[0].name;
+    } else {
+        files["img"] = "img/test.jpg"
+    }
+
     return stuff;
 }
 
@@ -45,18 +56,33 @@ function submitTo(e) {
     sendF(things);
 
     
+    if (files) {
+
+        let storageRef = firebase.storage().ref(files[0].name);
+        let upload = storageRef.put(files[0]);
+
+        
+    }
+
+
+
+
+    
+
+
+
 
 
 }
 
 function sendF(stuff) {
-    db.collection("timeline").add(stuff).then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
-    
+    db.collection("timeline").add(stuff).then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
+
 }
 
 

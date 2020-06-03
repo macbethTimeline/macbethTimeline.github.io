@@ -25,9 +25,12 @@
         <br>
 
         <div class="tools">
-            <p class="text">Scene:</p> <input class="inputBox" type="text" placeholder="1" id="scene">
 
             <p class="text">Act:</p> <input class="inputBox" type="text" placeholder="2" id="act">
+            
+            <p class="text">Scene:</p> <input class="inputBox" type="text" placeholder="1" id="scene">
+
+            
         </div>
 
         <br>
@@ -47,7 +50,11 @@
         <br>
         <p>Page: </p> <input class="themesInput" type="Text" placeholder="10" id="page">
 
-        <input type="button" value="Send" id="sendStuff">
+        <br>
+        <p>IMAGE: </p><input type="file" id="files" accept="image/x-png,image/gif,image/jpeg" value="Tex">
+        <input type="button" value="Add to timeline" id="sendStuff">
+
+        
     </section>
 
 
@@ -57,6 +64,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-storage.js"></script>       
+
 
     <script src="contribute.js"></script>
 
