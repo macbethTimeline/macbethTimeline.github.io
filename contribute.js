@@ -24,7 +24,6 @@ document.getElementById("files").addEventListener("change", function (e) {
 
 
 function getValues() {
-
     let stuff = {
         "scene": parseInt(document.getElementById("scene").value),
         "act": parseInt(document.getElementById("act").value),
@@ -35,8 +34,9 @@ function getValues() {
         "themes": document.getElementById("themes").value.split(","),
         "page": parseInt(document.getElementById("page").value)
     }
+    
 
-    if (files) {
+    if (files.length > 0) {
         stuff["img"] = files[0].name;
     } else {
         files["img"] = "img/test.jpg"
@@ -56,13 +56,15 @@ function submitTo(e) {
     sendF(things);
 
     
-    if (files) {
+    if (files.length > 0) {
 
         let storageRef = firebase.storage().ref(files[0].name);
         let upload = storageRef.put(files[0]);
 
         
     }
+
+   
 
 
 
@@ -78,6 +80,7 @@ function submitTo(e) {
 function sendF(stuff) {
     db.collection("timeline").add(stuff).then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
+            alert("Your contribution has been added");
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
