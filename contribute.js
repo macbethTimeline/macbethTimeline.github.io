@@ -39,7 +39,7 @@ function getValues() {
     if (files.length > 0) {
         stuff["img"] = files[0].name;
     } else {
-        files["img"] = "img/test.jpg"
+        stuff["img"] = "img/test.jpg"
     }
 
     return stuff;
